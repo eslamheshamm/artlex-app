@@ -10,7 +10,7 @@ export default function Container({ children, customMeta }) {
 		...customMeta,
 	};
 	return (
-		<body className="bg-accent  mx-auto dark:bg-white h-full font-display">
+		<body className="bg-accent mx-auto dark:bg-white h-full font-display">
 			<Head>
 				<title>{meta.title}</title>
 				<meta name="robots" content="follow, index" />
@@ -25,7 +25,7 @@ export default function Container({ children, customMeta }) {
 				)}
 			</Head>
 			<NavBar />
-			<main className="h-full mx-auto sm:w-11/12">
+			<main className="h-full mx-auto w-11/12">
 				<section>
 					<article>{children}</article>
 				</section>

@@ -12,7 +12,11 @@ module.exports = {
 					DEFAULT: "#161313",
 					shd1: "#231F1F",
 					shd2: "#201C1C",
+					shd3: "#414141",
 				},
+			},
+			height: {
+				hero: "900px",
 			},
 			typography: (theme) => ({
 				DEFAULT: {
@@ -87,5 +91,8 @@ module.exports = {
 	variants: {
 		typography: ["dark"],
 	},
-	plugins: [require("@tailwindcss/typography")],
+	plugins: [
+		require("@tailwindcss/typography"),
+		require("@tailwindcss/aspect-ratio"),
+	],
 };

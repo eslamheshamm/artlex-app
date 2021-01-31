@@ -10,7 +10,7 @@ export default function Container({ children, customMeta }) {
 		...customMeta,
 	};
 	return (
-		<body className="bg-accent w-11/12 mx-auto dark:bg-white h-full font-display">
+		<body className="bg-accent  mx-auto dark:bg-white h-full font-display">
 			<Head>
 				<title>{meta.title}</title>
 				<meta name="robots" content="follow, index" />

@@ -47,7 +47,7 @@ export default function Blog({ posts }) {
 					</svg>
 				</div> */}
 
-				<section className="grid md:grid-cols-2 gap-4 w-full">
+				<section className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
 					{!filteredBlogPosts.length && "No posts found."}
 					{filteredBlogPosts.map((frontMatter) => (
 						<BlogPost key={frontMatter.title} {...frontMatter} />

@@ -2,15 +2,15 @@ import NavBar from "@/components/Navbar/";
 import Head from "next/head";
 
 export default function Container({ children, customMeta }) {
-	const meta = {
-		title: "Artlex",
+	let meta = {
+		title: "title",
 		description: `Artists Community`,
 		image: "https://source.unsplash.com/random",
 		type: "website",
 		...customMeta,
 	};
 	return (
-		<body className="bg-accent dark:bg-white h-full">
+		<body className="bg-accent w-11/12 mx-auto dark:bg-white h-full font-display">
 			<Head>
 				<title>{meta.title}</title>
 				<meta name="robots" content="follow, index" />
@@ -25,7 +25,7 @@ export default function Container({ children, customMeta }) {
 				)}
 			</Head>
 			<NavBar />
-			<main className="h-full mx-auto w-11/12">
+			<main className="h-full mx-auto sm:w-11/12">
 				<section>
 					<article>{children}</article>
 				</section>

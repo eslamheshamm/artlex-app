@@ -9,12 +9,12 @@ const Category = ({ category = "Art", href, ...props }) => {
 			<button
 				className={
 					router.pathname === href
-						? "p-4 md:px-8 md:py-9 w-full  bg-primary text-black text-2xl font-bold leading-6 rounded-3xl focus:outline-none"
-						: "p-4 md:px-8 md:py-9 w-full  bg-accent-shd3 bg-opacity-40  text-white text-2xl font-bold leading-6 rounded-3xl focus:outline-none"
+						? "p-3  lg:py-6 xl:px-8 xl:py-9 w-full  bg-primary text-black text-2xl font-bold leading-6 rounded-3xl focus:outline-none"
+						: "p-3 lg:py-6 xl:px-8 xl:py-9 w-full  bg-accent-shd3 bg-opacity-40  text-white lg:text-2xl font-bold leading-6 rounded-3xl focus:outline-none"
 				}
 			>
-				<div className="flex justify-start ">
-					<i className="mr-4">
+				<div className="flex justify-start items-center">
+					<i className="mr-1 sm:mr-2 lg:mr-4">
 						{category == "art"
 							? Art
 							: category == "Creativity"
@@ -29,7 +29,7 @@ const Category = ({ category = "Art", href, ...props }) => {
 							? UXUI
 							: Art}
 					</i>
-					<span>{category}</span>
+					<p className="overflow-auto text-xs lg:text-xl ">{category}</p>
 				</div>
 			</button>
 		</a>
@@ -37,7 +37,7 @@ const Category = ({ category = "Art", href, ...props }) => {
 };
 const CategorySection = () => {
 	return (
-		<header className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+		<header className="grid grid-cols-2 md:grid-cols-4 gap-4">
 			<Link href="/art">
 				<Category category="Art" href="/art" />
 			</Link>

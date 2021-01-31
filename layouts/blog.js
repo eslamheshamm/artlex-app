@@ -10,49 +10,44 @@ const editUrl = (slug) =>
 export default function BlogLayout({ children, frontMatter }) {
 	return (
 		<Container
-			title={`${frontMatter.title}`}
+			title={frontMatter.title}
 			description={frontMatter.summary}
 			image={`https://leerob.io${frontMatter.image}`}
 			date={new Date(frontMatter.publishedAt).toISOString()}
 			type="article"
 		>
-			<section className="flex">
+			<section className="flex sm:flex-row">
 				<Aside />
-				<article className="mx-auto w-8/12 bg-accent h-full">
-					<h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white"></h1>
+				<article className="mx-auto w-10/12 bg-accent h-full">
 					<Header
-						imgLink="https://source.unsplash.com/random"
-						imgAlt="random"
+						hero="https://source.unsplash.com/random"
+						alt="random"
 						title={frontMatter.title}
 					/>
 					<div className=" justify-between items-start md:items-center w-full mt-2 mb-8">
-						<div className="w-full">
-							<div className="flex justify-between">
-								<ProfileBio
-									src="https://source.unsplash.com/random"
-									author={frontMatter.author}
-									about={frontMatter.authourInfo}
-								/>
-								<div className="flex flex-col items-end">
-									<div className="flex text-white text-opacity-40 mb-2">
-										<p className="text-sm">
-											{format(
-												parseISO(frontMatter.publishedAt),
-												"MMMM dd, yyyy"
-											)}
-										</p>
-										<span className="mx-2"> {`   • `}</span>
-										<p className="text-sm">{frontMatter.readingTime.text}</p>
-									</div>
-									<Catagory category={frontMatter.category.toUpperCase()} />
+						<div className="flex justify-between items-start flex-col lg:flex-row">
+							<ProfileBio
+								src="https://source.unsplash.com/random"
+								author={frontMatter.author}
+								bio={frontMatter.bio}
+							/>
+							<div className="flex flex-col lg:items-end">
+								<div className="flex my-4 text-white text-opacity-40 mb-2">
+									<p className="text-sm">
+										{format(parseISO(frontMatter.publishedAt), "MMMM dd, yyyy")}
+									</p>
+									<span className="mx-2"> {`   • `}</span>
+									<p className="text-sm">{frontMatter.readingTime.text}</p>
 								</div>
+								<Catagory category={frontMatter.category} />
 							</div>
 						</div>
 					</div>
-					<div className="prose dark:prose-dark max-w-none w-6/12 mx-auto h-full my-16">
+					<article className="w-11/12 md:w-9/12  sm:mx-auto text-opacity-40  text-white prose-sm sm:text-xl my-16 sm:prose-lg break-words leading-7">
 						{children}
-					</div>
-					<div className="text-sm text-gray-700 dark:text-gray-300">
+					</article>
+
+					{/* <div className="text-sm text-gray-700 dark:text-gray-300">
 						{` • `}
 						<a
 							href={editUrl(frontMatter.slug)}
@@ -61,7 +56,7 @@ export default function BlogLayout({ children, frontMatter }) {
 						>
 							{"Edit on GitHub"}
 						</a>
-					</div>
+					</div> */}
 				</article>
 			</section>
 		</Container>

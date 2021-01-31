@@ -4,16 +4,13 @@ import { getAllFilesFrontMatter } from "@/lib/mdx";
 import CategorySection from "@/components/Categories/";
 
 export default function Blog({ posts }) {
-	const category = "UXUI";
+	const category = "UX/UI";
 	const filteredBlogPosts = posts
 		.sort(
 			(a, b) =>
 				Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
 		)
-		.filter(
-			(frontMatter) =>
-				frontMatter.category.toLowerCase() === category.toLowerCase()
-		);
+		.filter((frontMatter) => frontMatter.category === category);
 
 	return (
 		<Container
@@ -22,7 +19,7 @@ export default function Blog({ posts }) {
 		>
 			<CategorySection />
 			<main className="mx-auto h-full my-12">
-				<section className="grid grid-cols-3 gap-4 w-full">
+				<section className="grid md:grid-cols-2 gap-4 w-full">
 					{!filteredBlogPosts.length && "No posts found."}
 					{filteredBlogPosts.map((frontMatter) => (
 						<BlogPost key={frontMatter.title} {...frontMatter} />

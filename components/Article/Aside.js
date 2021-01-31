@@ -1,15 +1,14 @@
 import { useState } from "react";
 
 const Aside = () => {
-	const [click, setClick] = useState(false);
-	const Like = () => {};
+	const [like, setLike] = useState(false);
 	return (
 		<div>
-			<aside className="flex flex-col items-center justify-around py-8 px-7 mt-96">
+			<aside className="flex flex-col items-center justify-around py-8 sm:px-7  mr-1 mt-96">
 				<button
-					className={click ? "text-primary  my-4 " : "text-transparent my-4"}
+					className={like ? "text-primary  my-4 " : "text-transparent my-4"}
 					onClick={() => {
-						setClick(!click);
+						setLike(!like);
 					}}
 				>
 					<i>{Heart}</i>

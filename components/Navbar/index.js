@@ -52,9 +52,9 @@ const NavBar = () => {
 					</button>
 				</div>
 				 */}
-				<button className="p-4 rounded-2xl text-primary bg-primary-shd1 bg-opacity-30  flex items-center focus:outline-none">
+				<button className="p-3 md:p-4 rounded-2xl text-primary bg-primary-shd1 bg-opacity-30  flex items-center justify-center focus:outline-none">
 					<i className="mx-2">{Heart}</i>
-					<span className="uppercase font-bold text-2xl">share love</span>
+					<span className="uppercase font-bold  sm:text-2xl">share love</span>
 				</button>
 			</div>
 		</header>

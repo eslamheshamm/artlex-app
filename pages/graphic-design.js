@@ -21,15 +21,14 @@ export default function Blog({ posts }) {
 			description="Egyptian community for artists."
 		>
 			<CategorySection />
-
-			<bod className="mx-auto h-full my-12">
-				<section className="grid grid-cols-3 gap-4 w-full">
+			<main className="mx-auto h-full my-12">
+				<section className="grid md:grid-cols-2 gap-4 w-full">
 					{!filteredBlogPosts.length && "No posts found."}
 					{filteredBlogPosts.map((frontMatter) => (
 						<BlogPost key={frontMatter.title} {...frontMatter} />
 					))}
 				</section>
-			</bod>
+			</main>
 		</Container>
 	);
 }

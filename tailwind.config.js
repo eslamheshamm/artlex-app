@@ -18,6 +18,9 @@ module.exports = {
 			height: {
 				hero: "900px",
 			},
+			fontFamily: {
+				display: ["Inconsolata"],
+			},
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {

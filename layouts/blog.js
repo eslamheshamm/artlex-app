@@ -4,18 +4,21 @@ import Header from "@/components/Article/Header";
 import ProfileBio from "@/components/Article/Bio";
 import Catagory from "@/components/Article/Catagory";
 import Aside from "@/components/Article/Aside";
+import Head from "next/head";
 const editUrl = (slug) =>
 	`https://github.com/leerob/leerob.io/edit/master/data/blog/${slug}.mdx`;
 
 export default function BlogLayout({ children, frontMatter }) {
 	return (
 		<Container
-			title={frontMatter.title}
 			description={frontMatter.summary}
 			image={`https://leerob.io${frontMatter.image}`}
 			date={new Date(frontMatter.publishedAt).toISOString()}
 			type="article"
 		>
+			<Head>
+				<title>{frontMatter.title}</title>
+			</Head>
 			<section className="flex sm:flex-row">
 				<Aside />
 				<article className="mx-auto w-10/12 bg-accent h-full">

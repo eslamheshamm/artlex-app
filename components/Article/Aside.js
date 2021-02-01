@@ -3,7 +3,7 @@ import { useState } from "react";
 const Aside = () => {
 	const [like, setLike] = useState(false);
 	return (
-		<div>
+		<div className="hidden">
 			<aside className="flex flex-col items-center justify-around py-8 sm:px-7  mr-1 mt-96">
 				<button
 					className={like ? "text-primary  my-4 " : "text-transparent my-4"}

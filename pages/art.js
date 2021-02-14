@@ -17,6 +17,9 @@ export default function Blog({ posts }) {
 			title="Artlex Community "
 			description="Egyptian community for artists."
 		>
+			<Head>
+				<title>Art</title>
+			</Head>
 			<CategorySection />
 			<main className="mx-auto h-full my-12">
 				<section className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">

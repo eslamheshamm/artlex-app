@@ -2,14 +2,18 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
-const NavBar = () => {
+const NavBar = ({ slug }) => {
 	const [mounted, setMounted] = useState(false);
 	const { theme, setTheme } = useTheme();
 	// After mounting, we have access to the theme
 	useEffect(() => setMounted(true), []);
+	const shareUrl = (slug) =>
+		`https://mobile.twitter.com/search?q=${encodeURIComponent(
+			`https://artlex-app.eslamheshamm.vercel.app/blog/${slug}`
+		)}`;
 
 	return (
-		<header className="bg-accent py-16">
+		<header className="bg-accent py-16 flex justify-center items-center">
 			<div className=" mx-auto flex w-11/12 justify-between items-center">
 				<h1 className="font-black text-4xl text-white dark:text-red">
 					<Link href="/blog">
@@ -52,9 +56,16 @@ const NavBar = () => {
 					</button>
 				</div>
 				 */}
-				<button className="p-3 md:p-4 rounded-2xl text-primary bg-primary-shd1 bg-opacity-30  flex items-center justify-center focus:outline-none">
-					<i className="mx-2">{Heart}</i>
-					<span className="uppercase font-bold  sm:text-2xl">share love</span>
+				<button className="p-3 md:p-4 rounded-2xl text-primary bg-primary-shd1 bg-opacity-30   focus:outline-none">
+					<a
+						href={shareUrl(slug)}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center justify-center"
+					>
+						<i className="mx-2">{Heart}</i>
+						<span className="uppercase font-bold  sm:text-2xl">share love</span>
+					</a>
 				</button>
 			</div>
 		</header>

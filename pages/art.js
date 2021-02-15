@@ -2,7 +2,7 @@ import Container from "@/components/Article/Container";
 import BlogPost from "@/components/Article/BlogPost";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import CategorySection from "@/components/Categories/";
-
+import Head from "next/head";
 export default function Blog({ posts }) {
 	const category = "Art";
 	const filteredBlogPosts = posts
